@@ -37,6 +37,7 @@ for the IntelliJ Platform.
 Using IntelliJ IDEA **File | Open**, select the `<IDEA_HOME>` directory. 
 * If IntelliJ IDEA displays an error about a missing or out of date required plugin (e.g. Kotlin),
   [enable, upgrade, or install that plugin](https://www.jetbrains.com/help/idea/managing-plugins.html) and restart IntelliJ IDEA.
+* On top of that you need: Space plugin, IntelliJ Safe Push, Exception Analyzer, IntelliJ API Watcher, Devkit, Grazie Pro, Editor Config.
 
 ### IntelliJ Build Configuration
 1. It's recommended to use JetBrains Runtime 17 to compile the project. 
@@ -51,6 +52,8 @@ Note that it is important to use the variant of JetBrains Runtime **without JCEF
 So, if for some reason `jbr-17` SDK points to an installation of JetBrains Runtime with JCEF, you need to change it: 
 ensure that IntelliJ IDEA is running in internal mode (by adding `idea.is.internal=true` to `idea.properties` file), navigate to `jbr-17` 
 item in Project Structure | SDKs, click on 'Browse' button, choose 'Download...' item and select version 17 and vendor 'JetBrains Runtime'.
+
+In order to have benefits of k2 compiler please set `-Didea.kotlin.plugin.use.k2=true` in VM Options.
 
 ### Building the IntelliJ Application Source Code
 To build IntelliJ IDEA Community Edition from source, choose **Build | Build Project** from the main menu.
